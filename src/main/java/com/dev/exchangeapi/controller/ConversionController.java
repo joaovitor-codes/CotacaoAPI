@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/conversion")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ConversionController {
     private final CurrencyConversionService currencyConversionService;
 

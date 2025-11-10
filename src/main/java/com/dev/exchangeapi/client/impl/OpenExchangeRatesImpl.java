@@ -27,7 +27,6 @@ public class OpenExchangeRatesImpl implements OpenExchangeRates {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request;
 
-        System.out.println("Conectando à URL: " + url);
         request = HttpRequest.newBuilder()
                 .uri(java.net.URI.create(url))
                 .build();
