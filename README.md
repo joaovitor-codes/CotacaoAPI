@@ -1,59 +1,62 @@
-# ExchangeApiFrontend
+# 💰 ConvertCoins 💸
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+Este é o projeto de frontend para o conversor de moedas **ConvertCoins**, desenvolvido como parte de um trabalho de faculdade. A aplicação é construída em **Angular** e consome uma API backend (Spring Boot) para fornecer cotações em tempo real.
 
-## Development server
+O design foi focado em uma estética "tech" moderna, utilizando um fundo estático "blueprint" e um card flutuante com efeito de "vidro fosco" (frosted glass).
 
-To start a local development server, run:
+## ✨ Funcionalidades (Features)
 
-```bash
-ng serve
-```
+* **Conversão em Tempo Real:** Converte valores com base em cotações atualizadas.
+* **Restrição de API:** A interface é "travada" para converter apenas de **USD** para outras moedas, seguindo a regra de negócio da API.
+* **Design "Hi-Tech":** Interface com fundo estático "blueprint" e um card central com efeito de vidro fosco para uma estética moderna.
+* **Tratamento de Erros Inteligente:** Exibe mensagens de erro amigáveis diretamente do backend (ex: "Moeda não encontrada" ou "Sistema sobrecarregado") em vez de erros genéricos.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Tecnologias Utilizadas
 
-## Code scaffolding
+* **Angular**
+* **TypeScript**
+* **HTML5**
+* **CSS3** (com design responsivo)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Como Executar o Projeto
 
-```bash
-ng generate component component-name
-```
+Para rodar este projeto localmente, você precisará ter o Node.js, o Angular CLI e o backend da aplicação rodando.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Pré-requisitos
 
-```bash
-ng generate --help
-```
+* **Node.js** (v18 ou superior)
+* **Angular CLI** (`npm install -g @angular/cli`)
+* O **Backend (ExchangeApi)** deve estar em execução na porta `localhost:8080`.
+  * (Link para o repositório do backend: `https://github.com/[seu-usuario]/ExchangeApi-Backend`)
 
-## Building
+### Passos para Instalação
 
-To build the project run:
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[seu-usuario]/ExchangeApi-Frontend.git
+    ```
 
-```bash
-ng build
-```
+2.  **Entre na pasta do projeto:**
+    ```bash
+    cd ExchangeApi-Frontend
+    ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3.  **Instale as dependências do Node.js:**
+    ```bash
+    npm install
+    ```
 
-## Running unit tests
+4.  **Execute a aplicação:**
+    ```bash
+    ng serve --open
+    ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+A aplicação será aberta automaticamente no seu navegador em `http://localhost:4200/`.
 
-```bash
-ng test
-```
+## 🔗 Conexão com o Backend
 
-## Running end-to-end tests
+Este frontend foi projetado para consumir o **[ExchangeApi-Backend](https://github.com/[seu-usuario]/ExchangeApi-Backend)**.
 
-For end-to-end (e2e) testing, run:
+A URL da API está configurada no arquivo `src/app/conversion.service.ts` e aponta para `http://localhost:8080/conversion`.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Certifique-se de que o backend esteja rodando antes de iniciar o frontend!**
