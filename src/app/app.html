@@ -1,0 +1,56 @@
+<main class="container">
+
+  <div class="header">
+    <h1>💰 ConvertCoins 💲</h1>
+    <p>Conversor de Moedas em Tempo Real</p>
+  </div>
+
+  <form (ngSubmit)="convertCurrency()" class="conversion-form">
+
+    <div class="form-group">
+      <label for="amount">Valor</label>
+      <div class="input-with-prefix">
+        <span class="prefix">USD</span>
+        <input
+          type="number"
+          id="amount"
+          [(ngModel)]="amount"
+          name="amount"
+          min="0"
+          required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="origin">De:</label>
+      <div class="locked-currency-input">
+        United States Dollar (USD)
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="destination">Para:</label>
+      <select
+        id="destination"
+        [(ngModel)]="destinationCurrency"
+        name="destination"
+        required>
+        <option *ngFor="let currency of availableCurrencies" [value]="currency.code">
+          {{ currency.name }} ({{ currency.code }})
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-button">Converter</button>
+  </form>
+
+  <div *ngIf="convertedAmount !== null" class="result">
+    <h2>Valor Convertido:</h2>
+    <p>{{ convertedAmount | number:'1.2-2' }}</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+</main>
