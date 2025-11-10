@@ -1,6 +1,7 @@
 package com.dev.exchangeapi.config;
 
 import com.dev.exchangeapi.exceptions.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -47,5 +48,4 @@ public class GlobalHandler {
         );
         return new ResponseEntity(exception, HttpStatus.NOT_FOUND);
     }
-
 }

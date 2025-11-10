@@ -1,6 +1,7 @@
 package com.dev.exchangeapi.service.impl;
 
 import com.dev.exchangeapi.exceptions.ErrorConvertingCurrency;
+import com.dev.exchangeapi.exceptions.ErrorExchangeNotFound;
 import com.dev.exchangeapi.service.CurrencyConversionService;
 import com.dev.exchangeapi.service.QuoteService;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class CurrencyConversionServiceImpl implements CurrencyConversionService 
 
         try{
             return quoteService.seekQuote(originCurrency, destinationCurrency).rates().multiply(amount);
-        }catch(Exception e){
+        }catch(ErrorExchangeNotFound e){
             throw new ErrorConvertingCurrency("Error ao converter" + originCurrency + " para " + destinationCurrency + ": " + e.getMessage());
         }
     }
