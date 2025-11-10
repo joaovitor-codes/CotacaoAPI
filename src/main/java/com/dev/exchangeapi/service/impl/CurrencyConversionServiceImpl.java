@@ -30,7 +30,7 @@ public class CurrencyConversionServiceImpl implements CurrencyConversionService 
         try{
             return quoteService.seekQuote(originCurrency, destinationCurrency).rates().multiply(amount);
         }catch(ErrorExchangeNotFound e){
-            throw new ErrorConvertingCurrency("Error ao converter" + originCurrency + " para " + destinationCurrency + ": " + e.getMessage());
+            throw new ErrorConvertingCurrency("Error ao converter " + originCurrency + " para " + destinationCurrency + ": " + e.getMessage());
         }
     }
 }
